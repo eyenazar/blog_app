@@ -1,2 +1,2 @@
 # blog_app
-Blog application on djnago
+Blog application on django
