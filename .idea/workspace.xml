@@ -2,12 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62f21003-988c-402e-9283-6ab350f0b983" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_project/django_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_project/django_project/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_project/django_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_project/django_project/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_project/users/templates/users/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/django_project/users/templates/users/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/python/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/docker/python/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_project/blog/templates/blog/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/django_project/blog/templates/blog/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_project/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_project/blog/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -74,7 +71,9 @@
       <option name="presentableId" value="Default" />
       <updated>1554625921777</updated>
       <workItem from="1558010239323" duration="3150000" />
-      <workItem from="1568120714153" duration="8515000" />
+      <workItem from="1568120714153" duration="8649000" />
+      <workItem from="1568308534678" duration="2347000" />
+      <workItem from="1568550020298" duration="6524000" />
     </task>
     <servers />
   </component>
@@ -89,7 +88,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
