@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="62f21003-988c-402e-9283-6ab350f0b983" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_project/blog/templates/blog/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/django_project/blog/templates/blog/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_project/django_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_project/django_project/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_project/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/django_project/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_project/users/templates/users/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/django_project/users/templates/users/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_project/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_project/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_project/blog/templates/blog/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/django_project/blog/templates/blog/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_project/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_project/blog/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,8 +29,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>

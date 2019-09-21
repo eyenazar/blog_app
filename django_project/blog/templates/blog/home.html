@@ -1,5 +1,9 @@
 {% extends 'blog/base.html'%}
+
+
+
 {% block content %}
+    {% if posts %}
     {% for post in posts %}
         <article class="media content-section">
             <img class = "rounded-circle article-img mt-3" src="{{post.author.profile.image.url}}" alt="profile image">
@@ -11,7 +15,7 @@
             <h2><a class="article-title" href="{% url 'post-detail' post.id %}">{{ post.title }}</a></h2>
             <p class="article-content">{{ post.content }}</p>
           </div>
-</article>
+        </article>
     {% endfor %}
 
     {% if is_paginated %}
@@ -35,5 +39,10 @@
         {% endif %}
 
     {% endif %}
-
+    {% else %}
+        <h1 style="color: #a8a8a8; margin-top: 200px; text-align: center;">No posts yet</h1>
+        <div style="text-align: center; margin-top: 50px;">
+            <img src="media/sad_smile.png" alt="" style="width: 300px;">
+        </div>
+    {% endif %}
 {% endblock content %}
