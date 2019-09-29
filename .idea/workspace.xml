@@ -2,9 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="62f21003-988c-402e-9283-6ab350f0b983" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_project/blog/templates/blog/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/django_project/blog/templates/blog/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/django_project/blog/templates/blog/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/django_project/blog/templates/blog/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/django_project/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_project/blog/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_project/blog/templates/blog/post_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/django_project/blog/templates/blog/post_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_project/django_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_project/django_project/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_project/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_project/users/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_project/users/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_project/users/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_project/users/templates/users/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/django_project/users/templates/users/profile_edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/django_project/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/django_project/users/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

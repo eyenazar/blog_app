@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.contrib import messages
+
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.sites.shortcuts import get_current_site
@@ -10,6 +11,7 @@ from django.template.loader import render_to_string
 from .token import activation_token
 from django.shortcuts import get_object_or_404
 from django.http import Http404
+from users.models import Profile
 
 
 def register(request):
@@ -50,8 +52,12 @@ def activate(request, uid, token):
         return render(request, 'users/registration_confirmation_done.html', {})
 
 
+def profile(request, username):
+    custom_user = User.objects.get(username=username)
+    return render(request, 'users/profile.html', {'custom_user': custom_user})
+
 @login_required
-def profile(request):
+def profile_edit(request, username):
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
@@ -60,8 +66,8 @@ def profile(request):
             u_form.save()
             p_form.save()
             messages.success(request, f'Profile has been updated!')
-            return redirect('profile')
+            return redirect('profile', username)
     else:
         u_form = UserUpdateForm(instance=request.user)
         p_form = ProfileUpdateForm(instance=request.user.profile)
-    return render(request, 'users/profile.html', {'u_form': u_form, 'p_form': p_form})
+    return render(request, 'users/profile_edit.html', {'u_form': u_form, 'p_form': p_form})

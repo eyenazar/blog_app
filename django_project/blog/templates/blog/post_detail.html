@@ -1,10 +1,11 @@
 {% extends 'blog/base.html'%}
 {% block content %}
     <article class="media content-section">
-        <img class = "rounded-circle article-img mt-3" src="{{object.author.profile.image.url}}" alt="profile image">
+        <a href="{% url 'profile' object.author %}"><img class = "rounded-circle article-img mt-3" src="{{object.author.profile.image.url}}"
+                alt="profile image"></a>
         <div class="media-body">
             <div class="article-metadata">
-              <a class="mr-2" href="#">{{ object.author }}</a>
+              <a class="mr-2" href="{% url 'profile' object.author %}">{{ object.author }}</a>
               <small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
             </div>
             <h2 class = 'article-title'>{{ object.title }}</h2>
