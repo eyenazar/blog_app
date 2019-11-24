@@ -1,12 +1,52 @@
-{% extends 'blog/base.html' %}
-{% load crispy_forms_tags %}
-{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="{% static 'blog/style.css' %}">
+	<title>Document</title>
+</head>
+<body class="loginPage">
+	<section class="sectionHeader">
+		<header class="header">
+			<ul class="ulLogo">
+				<li><a href="{%url 'blog-home'%}">DL++</a></li>
+			</ul>
+			<ul class="ulHeader">
+				<li><a href="generic.html">New Post</a></li>
+				<li><a href="blog.html">News</a></li>
+				<li><a href="elements.html">Memes</a></li>
+			</ul>
+		</header>
+	</section>
+	<section class="sectionLoginMain">
+		<div class="divSignIn">
+            <form action="" method='POST'>
+                {% csrf_token %}
+				<h3>Sign In</h3>
+				<div class="signUpListDiv"><ul class="signUpList">	
+					<li>{{form.username}}</li>
+					<li>{{form.password}}</li>
+				</ul>
+				</div>
+				<button id="signInButton" type='submit'>Sign In</button>
+				<p>Do not have an account? <a href="{% url 'register' %}">Sign Up</a></p>
+				<p>Forgot your username or password? <a href="{% url 'password_reset' %}">Reset now</a></p>
+            </div>
+        </form>
+	</section>
+	
+</body>
+</html>
+
+
+<!-- 
+
     <div class = 'content-section'>
         <form action="" method = 'POST'>
             {% csrf_token %}
             <fieldset class = 'form-group'>
                 <legend class = 'border-bottom mb-4'>Log In</legend>
-                {{form|crispy}}
             </fieldset>
             <div class = 'form-group'>
                 <button class = 'btn btn-outline-info' type = 'submit'>Log In</button>
@@ -19,4 +59,4 @@
         </form>
     </div>
 
-{% endblock content %}
+-->
