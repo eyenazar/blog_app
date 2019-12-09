@@ -1,8 +1,136 @@
-{% extends 'blog/base.html'%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="static/blog/style.css">
+	<title>DL++</title>
+</head>
+<body>
+
+<video autoplay muted loop id="myVideo" style="position: fixed;
+right: 0;
+bottom: 0;
+min-width: 100%;
+min-height: 100%;
+z-index: -1;">
+	<source src="static/blog/video/videoMain.mp4" type="video/mp4">
+</video>
+
+	<section class="sectionMain">
+		<section class="sectionLeft">
+			<div class="divTitle">
+				<a id="h1DLPPlink" href="index.html"><h1 id="h1DLPP">DL++</h1></a>
+				<br>
+				<p>Introducing the ultimate social network!</p>
+			</div>
+			<br>
+			<div class="divInfo">
+				<div class="divInfoBox">
+					<img class="iconsInfo" src="static/blog/images/icons/DAP_Icon_RSS.png" alt="award">
+					<h3>New way to communication</h3>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</div>
+				<div class="divInfoBox">
+					<img class="iconsInfo" src="static/blog/images/icons/DAP_Icon_Mail.png" alt="heart">
+					<h3>All-in-one platform</h3>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</div>
+			</div>
+		</section>
+		<section class="sectionRight">
+			<div class="divSignUp">
+                <h2>Sign In</h2>
+                <form action="" method='POST'>
+                    {% csrf_token %}
+                    <ul class="signUpList">	
+                        <li>{{form.username}}</li>
+                        <li>{{form.password}}</li>
+                    </ul>
+                    <button id="signInButton" type='submit'>Sign In</button>
+                    <p>Do not have an account? <a href="{% url 'register' %}">Sign Up</a></p>
+                    <p>Forgot your username or password? <a href="{% url 'password_reset' %}">Reset now</a></p>
+                </div>
+            </form>
+				<!-- <ul class="signUpList">	
+					<li><input name="signUp" type="text" placeholder="ID" title="userID"></li>
+					<li><input name="signUp" type="email" placeholder="Email" title="userEmail"></li>
+					<li><input name="signUp" type="password" placeholder="Password" title="userPassword"></li>
+					<li><input name="signUp" type="password" placeholder="Password confirmation" title="userPasswordConfirmation"></li>
+				</ul>
+				<button id="signUpButton">Sign Up</button>
+
+				<p><br><a href="login.html">Already have an account? Sign In!</a></p> -->
+			</div>
+		</section>
+	</section>
+	<section class="sectionMainFooter">
+		<footer>
+			
+		</footer>
+	</section>
+</body>
+</html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="static/blog/style.css">
+	<title>Document</title>
+</head>
+<body>
+
+<video autoplay muted loop id="myVideo">
+	<source src="static/blog/video/videoMain.mp4" type="video/mp4">
+</video>
+
+	<section class="sectionMain">
+		<section class="sectionLeft">
+			<div class="divTitle">
+				<a id="h1DLPPlink" href="index.html"><h1 id="h1DLPP">DL++</h1></a>
+				<br>
+				<p>Introducing the ultimate social network!</p>
+			</div>
+			<br>
+			<div class="divInfo">
+				<div class="divInfoBox">
+					<img class="iconsInfo" src="static/blog/images/icons/DAP_Icon_RSS.png" alt="award">
+					<h3>New way to communication</h3>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</div>
+				<div class="divInfoBox">
+					<img class="iconsInfo" src="static/blog/images/icons/DAP_Icon_Mail.png" alt="heart">
+					<h3>All-in-one platform</h3>
+					<p>Lorem ipsum dolor sit amet.</p>
+				</div>
+			</div>
+		</section>
+		<section class="sectionRight">
+			<div class="divSignUp">
+				<h2>Join us today!</h2>
+				<ul class="signUpList">	
+					<li><input name="signUp" type="text" placeholder="ID" title="userID"></li>
+					<li><input name="signUp" type="email" placeholder="Email" title="userEmail"></li>
+					<li><input name="signUp" type="password" placeholder="Password" title="userPassword"></li>
+					<li><input name="signUp" type="password" placeholder="Password confirmation" title="userPasswordConfirmation"></li>
+				</ul>
+				<button id="signUpButton">Sign Up</button>
+
+				<p><br><a href="login.html">Already have an account? Sign In!</a></p>
+			</div>
+		</section>
+	</section>
+	<section class="sectionMainFooter">
+		<footer>
+			
+		</footer>
+	</section>
+</body>
+</html> -->
 
 
 
-{% block content %}
+
+<!-- {% block content %}
     {% if posts %}
     {% for post in posts %}
         <article class="media content-section">
@@ -46,4 +174,4 @@
             <img src="media/sad_smile.png" alt="" style="width: 300px;">
         </div>
     {% endif %}
-{% endblock content %}
+{% endblock content %} --> -->

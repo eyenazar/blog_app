@@ -26,7 +26,7 @@ urlpatterns = [
     path('', include('blog.urls')),
     # path('', include('django_registration.backends.activation.urls')),
     path('register', users_views.register, name = 'register'),
-    path('login', auth_views.LoginView.as_view(template_name = 'users/login.html'), name = 'login'),
+    # path('login', auth_views.LoginView.as_view(template_name = 'blog/home.html'), name = 'login'),
     path('logout', auth_views.LogoutView.as_view(template_name = 'users/logout.html'), name = 'logout'),
     url(r'^(?P<username>\w+)/edit/$', users_views.profile_edit, name='profile-edit'),
     url(r'^profile/(?P<username>\w+)/$', users_views.profile, name='profile'),

@@ -1,13 +1,774 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/blog/style.css">
+    <title>Blog</title>
+    <style>
+      * {
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s;
+}
+
+body {
+    /*font-family: "CircularStd-Medium", sans-serif;*/
+    font-family: 'CircularStd-Medium', sans-serif;
+    color: #646464;
+    background: rgba(0, 0, 0, 50);
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    height: 28px;
+    font-size: 20px;
+    font-family: 'CircularStd-Medium', sans-serif;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: 1px solid #e5e5e5;
+    font-weight: 500;
+    background-color: #f0f0f0;
+    color: #292929;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+h3 {
+    font-size: 30px;
+}
+
+p {
+    font-size: 20px;
+}
+
+li {
+    margin: 30px 0;
+}
+
+a {
+    transition: all 0.3s;
+    text-decoration: none;
+    color: #494949;
+}
+
+a:hover {
+    transition: all 0.3s;
+    color: black;
+    font-weight: 400;
+}
+
+hr {
+    position: relative;
+    width: 60%;
+    color: #e5e5e5;
+}
+
+
+#myVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    /*background: rgba(0, 0, 0, 50);*/
+}
+
+.sectionMain {
+    display: flex;
+    padding-top: 50px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+#h1DLPP {
+    font-size: 128px;
+    margin: 0px;
+    color: white;
+}
+
+#h1DLPPlink:hover {
+    text-decoration: none;
+    color: #323232;
+}
+
+.sectionLeft {
+    width: 50%;
+    margin: 20px;
+}
+
+.sectionRight {
+    width: 50%;
+    margin: 20px;
+}
+
+.divTitle {
+    color: white;
+    text-align: center;
+    padding: 52px;
+    margin: 0 auto;
+    border-radius: 6px;
+}
+
+.divSignUp {
+    text-align: center;
+    padding: 52px;
+    margin: 0 auto;
+    border-radius: 6px;
+    color: white;
+}
+
+.divSignUp a {
+    color: #e0e0e0;
+}
+
+.divSignUp a:hover {
+    color: white;
+}
+
+.divInfo {
+    color: white;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    margin-top: 100px;
+    padding: 52px;
+    margin: 0 auto;
+    border-radius: 6px;
+}
+
+.divInfoBox {
+    padding: 0 20px;
+    opacity: 1;
+}
+
+.divInfoBox p {
+    padding: 0 20px;
+    opacity: 1;
+}
+
+.iconsInfo {
+    height: 150px;
+}
+
+.signUpList {
+    list-style: none;
+    margin-left: -40px;
+}
+
+#signUpButton {
+    transition: all 0.3s;
+    font-size: 20px;
+    font-family: 'CircularStd-Bold', sans-serif;
+    border-radius: 4px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #E3E3E3;
+    color: black;
+}
+
+#signUpButton:hover {
+    transition: all 0.3s;
+    font-size: 20px;
+    border: none;
+    background-color: #292929;
+    color: white;
+
+}
+
+/*=======================================HEADER=======================================*/
+.ulHeader {
+    float: right;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0 30px;
+    color: #006bb3;
+}
+
+.ulHeader a {
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 5px 10px;
+    font-family: 'CircularStd-Medium', sans-serif;
+    font-weight: 400;
+    transition: all 0.3s;
+    color: white;
+}
+
+.ulHeader a:hover {
+    /*padding: 10px;*/
+    color: #d0d0d0;
+    transition: all 0.3s;
+    font-family: 'CircularStd-Medium', sans-serif;
+    font-weight: 400;
+}
+
+.sectionHeader li {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.sectionHeader {
+    width: 100%;
+    display: inline-block;
+    list-style: none;
+    background-color: #242424;
+    font-size: 24px;
+    color: white;
+    border-bottom: 2px solid;
+    border-color: #494949;
+}
+
+.sectionHeader a {
+
+}
+
+.ulLogo {
+    float: left;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0 20px;
+}
+
+.ulLogo a {
+    color: #ffffff;
+    font-size: 36px;
+}
+
+.ulLogo a:hover {
+    color: #d0d0d0;
+}
+
+
+/*=====================================LOGIN PAGE=====================================*/
+.loginPage {
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://w.wallhaven.cc/full/95/wallhaven-95wey8.png);
+    background: -o-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://w.wallhaven.cc/full/95/wallhaven-95wey8.png);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://w.wallhaven.cc/full/95/wallhaven-95wey8.png);
+    background-attachment: fixed;
+    background-position: center;
+    background-clip: border-box;
+    background-size: 100%;
+    transition: all 0.3s;
+
+}
+
+.sectionLoginMain {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.divSignIn {
+    text-align: center;
+    margin: 150px auto 0 auto;
+    padding: 52px;
+    background-image: linear-gradient(to top, #242424, #323b47, #2b576a, #017581, #009487);
+    border-radius: 6px;
+    -webkit-box-shadow: 0px 0px 71px 17px rgba(0, 0, 0, 0.53);
+    -moz-box-shadow: 0px 0px 71px 17px rgba(0, 0, 0, 0.53);
+    box-shadow: 0px 0px 71px 17px rgba(0, 0, 0, 0.53);
+    color: white;
+}
+
+.signUpList {
+    align-items: center;
+    margin-left: 0;
+}
+
+.divSignIn p {
+    margin: 10px 40px 10px 40px;
+    align-items: center;
+    text-align: center;
+}
+
+.divSignIn a {
+    color: #e0e0e0;
+}
+
+.divSignIn a:hover {
+    color: white;
+}
+
+#signInButton {
+    transition: all 0.3s;
+    font-size: 20px;
+    font-family: 'CircularStd-Bold', sans-serif;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    background-color: #E3E3E3;
+    color: black;
+}
+
+#signInButton:hover {
+    transition: all 0.3s;
+    font-size: 20px;
+    border: none;
+    background-color: #292929;
+    color: white;
+}
+
+/*=====================================BLOG PAGE=====================================*/
+.blogPage {
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://w.wallhaven.cc/full/x1/wallhaven-x1rowv.jpg);
+    background: -o-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://w.wallhaven.cc/full/x1/wallhaven-x1rowv.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://w.wallhaven.cc/full/x1/wallhaven-x1rowv.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-clip: border-box;
+    background-size: 100%;
+    transition: all 0.3s;
+
+}
+
+.sectionBlogDiscrete {
+    color: white;
+    width: 70%;
+    margin: 50px 50px 50px 50px;
+    background-color: #303030;
+    -webkit-box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 6px 4px rgba(0, 0, 0, 0.75);
+}
+
+.sectionBlogDiscrete a {
+    color: white;
+}
+
+.sectionBlogDiscrete a:hover {
+    color: #e0e0e0;
+}
+
+.blogPostBodyButtonsLinks {
+    display: flex;
+    list-style: none;
+}
+
+.blogPostBodyButtonsLinks li {
+    padding-right: 5px;
+}
+
+.divBlogDiscrete {
+    width: 90%;
+    padding: 20px;
+}
+
+.blogPostBodyShort {
+    padding: 10px 0;
+}
+
+.blogPostBodyCut {
+
+}
+
+.blogPostHeader {
+
+}
+
+.blogPostHeaderName {
+    padding: 10px 0 0 0;
+}
+
+.blogPostHeaderName h3 {
+    font-family: 'CircularStd-Bold', sans-serif;
+    font-size: 28px;
+}
+
+.blogPostHeaderDate {
+    padding: 10px 0;
+}
+
+.blogPostHeaderDate p {
+    font-family: "Courier New", serif;
+    font-size: 18px;
+}
+
+/*=====================================PASSWORD RESET PAGE=====================================*/
+.passResetPage {
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://w.wallhaven.cc/full/95/wallhaven-95wey8.png);
+    background: -o-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://w.wallhaven.cc/full/95/wallhaven-95wey8.png);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://w.wallhaven.cc/full/95/wallhaven-95wey8.png);
+    background-attachment: fixed;
+    background-position: center;
+    background-clip: border-box;
+    background-size: 100%;
+    transition: all 0.3s;
+
+}
+
+.divPassReset {
+    text-align: center;
+    margin: 150px auto 0 auto;
+    padding: 52px;
+    background-image: linear-gradient(to top, #242424, #323b47, #2b576a, #017581, #009487);
+    border-radius: 6px;
+    -webkit-box-shadow: 0px 0px 71px 17px rgba(0, 0, 0, 0.53);
+    -moz-box-shadow: 0px 0px 71px 17px rgba(0, 0, 0, 0.53);
+    box-shadow: 0px 0px 71px 17px rgba(0, 0, 0, 0.53);
+    color: white;
+}
+
+.passResetList {
+    align-items: center;
+    margin-left: 0;
+}
+
+.passResetList li {
+    list-style: none;
+}
+
+.divPassReset p {
+    margin: 10px 40px 10px 40px;
+    align-items: center;
+    text-align: center;
+}
+
+.divPassReset a {
+    color: #e0e0e0;
+}
+
+.divPassReset a:hover {
+    color: white;
+}
+
+#passResetButton {
+    transition: all 0.3s;
+    font-size: 20px;
+    font-family: 'CircularStd-Bold', sans-serif;
+    padding: 10px 20px;
+    border-radius: 4px;
+    border: none;
+    background-color: #E3E3E3;
+    color: black;
+}
+
+#passResetButton:hover {
+    transition: all 0.3s;
+    font-size: 20px;
+    border: none;
+    background-color: #292929;
+    color: white;
+}
+
+.sectionPassResetMain {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+
+input[name="passReset"] {
+    height: 28px;
+    width: 70%;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'CircularStd-Medium', sans-serif;
+    padding: 10px 20px;
+    border-radius: 6px;
+    border: 1px solid #e5e5e5;
+    font-weight: 500;
+    background-color: #f0f0f0;
+    color: #292929;
+}
+
+input[name = "newPass"], input[name = "newPassConfirm"] {
+    text-align: center;
+}
+
+/*=====================================PAGINATION=====================================*/
+.pagination {
+    margin: 50px;
+}
+
+/* Pagination links */
+.paginationDiv a {
+    background-color: #242424;
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.paginationDiv a {
+    transition: color 0.3s;
+}
+
+/* Style the active/current link */
+.paginationDiv a.active {
+    background-color: #494949;
+    color: white;
+    transition: color 0.3s;
+}
+
+/* Add a grey background color on mouse-over */
+.paginationDiv a:hover:not(.active) {
+    background-color: #292929;
+    color: white;
+    transition: color 0.3s;
+}
+
+/*=====================================FOOTER=====================================*/
+.footer {
+    width: 100%;
+    background-color: #242424;
+    margin: 20px 0 0 0;
+    display: inline-block;
+    list-style: none;
+}
+
+.footerLinks {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0 30px;
+    color: #006bb3;
+}
+
+.footerLinks a {
+    display: flex;
+    justify-content: center;
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 0 10px;
+    font-family: 'CircularStd-Medium', sans-serif;
+    font-weight: 400;
+    transition: all 0.3s;
+    color: white;
+}
+
+.footerLinks a:hover {
+    /*padding: 10px;*/
+    color: #d0d0d0;
+    transition: all 0.3s;
+    font-family: 'CircularStd-Medium', sans-serif;
+    font-weight: 400;
+}
+
+/*=====================================FOOTER=====================================*/
+.profilePage {
+    background: -webkit-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://w.wallhaven.cc/full/96/wallhaven-96kwk1.jpg);
+    background: -o-linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://w.wallhaven.cc/full/96/wallhaven-96kwk1.jpg);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://w.wallhaven.cc/full/96/wallhaven-96kwk1.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-clip: border-box;
+    background-size: 100%;
+    transition: all 0.3s;
+}
+
+.sectionProfile {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.divProfileInfo {
+    padding-left: 50px;
+}
+
+.divProfileGeneral {
+    background-color: #292929;
+    width: 80%;
+    margin: 20px;
+    padding: 20px 0 20px 10px;
+}
+
+.divProfileBar {
+    background-color: #292929;
+    width: 20%;
+    margin: 20px 10px 20px 10px;
+    padding: 20px;
+    align-items: center;
+}
+
+.divProfileName {
+    padding: 20px 0 5px 0;
+}
+
+.divProfileGroup {
+    margin-bottom: 20px;
+}
+
+.divProfileGpa {
+    padding: 10px;
+    margin-top: 40px;
+}
+
+
+.divProfileBio1 div, .divProfileBio2 div {
+    margin: 5px 0 5px 0;
+}
+
+.divProfileAbout {
+    margin: 20px 0 10px 0;
+}
+
+.profileBreak {
+    height: 40px;
+}
+
+.divProfileButtons {
+    display: flex;
+    justify-content: center;
+    float: left;
+}
+
+.divProfileAbout hr {
+    transition: all 0.3s;
+}
+
+.divProfileAbout a {
+    color: white;
+}
+
+.divProfileAbout a:hover {
+    color: #646464;
+}
+
+.divProfileButtons button {
+    transition: all 0.3s;
+    font-size: 20px;
+    font-family: 'CircularStd-Bold', sans-serif;
+    padding: 10px 20px;
+    margin-right: 5px;
+    border: none;
+    background-color: #595959;
+    color: black;
+}
+
+.divProfileButtons button:hover {
+    transition: all 0.3s;
+    font-size: 20px;
+    border: none;
+    background-color: #646464;
+    color: white;
+}
+
+    </style>
+</head>
+<body class="blogPage">
+<section class="sectionHeader">
+    <header class="header">
+        <ul class="ulLogo">
+            <li><a href="{% url 'blog-home' %}">DL++</a></li>
+        </ul>
+        <ul class="ulHeader">
+            <li><a href="generic.html">New Post</a></li>
+            <li><a href="contact.html">News</a></li>
+            <li><a href="elements.html">Memes</a></li>
+        </ul>
+    </header>
+</section>
+<section class="blogLeft">
+    {% if posts %}
+    {% for post in posts %}
+    <section class="sectionBlogDiscrete">
+        <div class="divBlogDiscrete">
+            <div class="blogPostHeader">
+                <div class="blogPostHeaderName"><a href="#"><h3>{{ post.title }}</h3></a></div>
+                <div class="blogPostHeaderDate"><p>{{ post.date_posted|date:"F d, Y" }}</p></div>
+            </div>
+            <hr style="width: 100%; color: black;">
+
+            <div class="blogPostBody">
+                <div class="blogPostBodyShort"><p>{{ post.content }}</p></div>
+                <div class="blogPostBodyCut"><a href="#"><p>Show more...</p></a></div>
+                <div class="blogPostBodyButtons">
+                    <ul class="blogPostBodyButtonsLinks">
+                        <li><a href="#">Like</a></li>
+                        <li><a href="#">Comments</a></li>
+                        <li><a href="#">Share</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endfor %}
+    {% endif %}
+</section>
+
+<section class="blogRight">
+</section>
+{% if is_paginated %}
+
+        <div class='paginationDiv' style="margin-left: 55px">
+        {% if page_obj.has_previous %}
+            <a class = 'btn btn-outline-info mb-4' href="?page=1">First</a>
+            <a class = 'btn btn-outline-info mb-4' href="?page={{page_obj.previous_page_number}}">Previous</a>
+        {% endif %}
+
+        {% for num in page_obj.paginator.page_range %}
+            {% if page_obj.number == num %}
+                <a class = 'btn btn-info mb-4' href="?page={{num}}">{{num}}</a>
+            {% elif  num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                 <a class = 'btn btn-outline-info mb-4' href="?page={{num}}">{{num}}</a>
+            {% endif %}
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+            <a class = 'btn btn-outline-info mb-4' href="?page={{page_obj.next_page_number}}">Next</a>
+            <a class = 'btn btn-outline-info mb-4' href="?page={{page_obj.paginator.num_pages}}">Last</a>
+        {% endif %}
+
+        </div>
+
+    {% endif %}
+<!-- <section class="pagination">
+    <div class="paginationDiv">
+        <a href="#">&laquo;</a>
+        <a class="active" href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">&raquo;</a>
+    </div>
+</section> -->
+
+<section class="footer">
+    <div class="footerDiv">
+        <ul class="footerLinks">
+            <li><a href="">Homepage</a></li>
+            <li><a href="">Blog</a></li>
+            <li><a href="">Schedule</a></li>
+            <li><a href="">Rules</a></li>
+            <li><a href="">Sitemap</a></li>
+        </ul>
+    </div>
+</section>
+</body>
+</html>
+
+<!-- {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head> -->
     <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> -->
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <link rel="stylesheet" href="{% static 'blog/main.css' %}">
     {% if title %}
@@ -34,9 +795,9 @@
                     <a class="nav-item nav-link" href="{% url 'blog-home' %}">Home</a>
                     <a class="nav-item nav-link" href="{% url 'blog-about' %}">Info</a>
               {% endif %}
-            </div>
+            </div> -->
             <!-- Navbar Right Side -->
-            <div class="navbar-nav">
+            <!-- <div class="navbar-nav">
                 {% if user.is_authenticated %}
                     <a class="nav-item nav-link mt-2" href="{% url 'profile' user.username %}">{{user.username}} Profile</a>
                     <a href = "{% url 'profile' user.username %}"><img src="{{user.profile.image.url}}" class = "rounded-circle article-img ml-2" alt="Profile Image"></a>
@@ -73,11 +834,11 @@
           </div>
         </div>
       </div>
-    </main>
+    </main> -->
      <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
-</html>
+</html> -->

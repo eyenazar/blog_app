@@ -1,12 +1,52 @@
-{% extends 'blog/base.html' %}
-{% load crispy_forms_tags %}
-{% block content %}
-    <div class = 'content-section'>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="static/blog/style.css">
+	<title>Registration</title>
+</head>
+<body class="loginPage">
+	<section class="sectionHeader">
+		<header class="header">
+			<ul class="ulLogo">
+				<li><a href="{% url 'blog-home' %}">DL++</a></li>
+			</ul>
+			<ul class="ulHeader">
+				<li><a href="generic.html">New Post</a></li>
+				<li><a href="blog.html">News</a></li>
+				<li><a href="elements.html">Memes</a></li>
+			</ul>
+		</header>
+	</section>
+	<section class="sectionLoginMain">
+        <form method="POST">
+        {% csrf_token %}
+		<div class="divSignIn">
+				<h3>Sign Up</h3>
+				<div class="signUpListDiv"><ul class="signUpList">	
+                    <li>{{ form.username }}</li>
+                    <li>{{ form.email }}</li>
+                    <li>{{ form.password1 }}</li>
+                    <li>{{ form.password2 }}</li>
+				</ul>
+				</div>
+				<button id="signInButton" type='Submit'>Sign Up</button>
+				<p><br><a href="index.html">Already have an account?</a></p>
+				<p><a href="pass_reset.html">Forgot your username or password?</a></p>
+            </div>
+        </form>
+	</section>
+	
+</body>
+</html>
+
+
+    <!-- <div class = 'content-section'>
         <form action="" method = 'POST'>
-            {% csrf_token %}
+    
             <fieldset class = 'form-group'>
                 <legend class = 'border-bottom mb-4'>Join Today</legend>
-                {{form | crispy}}
+    
             </fieldset>
             <div class = 'form-group'>
                 <button class = 'btn btn-outline-info' type = 'submit'>Sign Up</button>
@@ -16,6 +56,5 @@
                 <small class = 'text-muted'>Already Have An Account? <a href="{% url 'login' %}" class = 'ml-2'>Sign In</a></small>
             </div>
         </form>
-    </div>
+    </div> -->
 
-{% endblock content %}
