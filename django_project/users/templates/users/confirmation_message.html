@@ -1,8 +1,26 @@
-{% extends 'blog/base.html' %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="static/blog/style.css">
+    <title>Confirmation</title>
+    <style>
+        .confMessage {
+            text-align: center;
+            color: greenyellow;
+            margin-top: 100px;
+            font-size: 25px;
+        }
+        .confMessage:hover {
+            color: lightgreen;
+        }
+    </style>
+</head>
+<body class="loginPage">
+        <h1 class="confMessage">A confirmation message was sent to your email. Please activate your account!</h1>
+</body>
+</html>
 
-<div class="alert alert-primary" role="alert">
+<!-- <div class="alert alert-primary" role="alert">
     A confirmation message was sent to your email. Please activate your account!
-</div>
-
-{% endblock content %}
+</div> -->
